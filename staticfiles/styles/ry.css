@@ -1,0 +1,129 @@
+/* Existing styles are the same... */
+body {
+    background-color: #0e1012;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.alert {
+    background-color: #ff4d4f;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    animation: fadeOut 4s ease forwards;
+}
+
+@keyframes fadeOut {
+    0%, 80% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+.weather-container {
+    background: #1a1c1f;
+    border-radius: 20px;
+    padding: 30px;
+    width: 360px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px 0 0 10px;
+    border: 1px;
+    border-color:white;
+    background-color: black;
+    outline: 1px;
+    color: white;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #040404;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    color: white;
+    cursor: pointer;
+}
+
+.weather-card {
+    text-align: center;
+}
+
+.weather-card .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#local-time {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.main-icon {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.details {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Forecast Section */
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 8px;
+}
+
+.forecast-day {
+    background-color: #2a2d31;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.forecast-day img {
+    width: 36px;
+    height: 36px;
+}

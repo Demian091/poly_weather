@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import requests
 import datetime
 from django.contrib import messages
@@ -42,7 +42,7 @@ def weather_view(request):
 
         else:
             messages.error(request, 'City not found. Please try again.')
-
+            
         if forecast_response.status_code == 200:
             data = forecast_response.json()
             daily_forecasts = {}
