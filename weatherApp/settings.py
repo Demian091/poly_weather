@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vkw6t1)m@9(#pz=(j-fl@$3^=qf^xr7t!3fv@v_^5+qalwuilt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['Poly_weather.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 
