@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherApp</title>
+    <link rel="stylesheet" href="{% static 'styles/ry.css' %}"/>
+
+</head>
+<body>
+
+<!-- Error Message -->
+  <div class="messages">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="weather-container">
+    <!-- Search -->
+    <form class="search-bar" method="get">
+      <input type="text" name="city" placeholder="Enter city..." required>
+      <button type="submit">Search</button>
+    </form>
+
+    {% if weather.city %}
+    <!-- Main Weather Card -->
+    <div class="weather-card">
+      <div class="top-bar">
+        <h2>{{ weather.city }}</h2>
+        <p class="local-time">{% now "l, M j | h:i A" %}</p>
+      </div>
+
+      <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon" class="main-icon">
+      <p class="description">{{ weather.description|capfirst }}</p>
+      <p class="temperature">{{ weather.temperature }}°C</p>
+      <p class="details">Humidity: {{ weather.humidity }}% | Wind: {{ weather.wind }} km/h</p>
+
+      <!-- Forecast -->
+        <div class="forecast">
+        {% for day in forecast %}
+            <div class="forecast-day">
+            <p>{{ day.day }}</p>
+            <img src="http://openweathermap.org/img/wn/{{ day.icon }}@2x.png" alt="">
+            <p>{{ day.temp }}°C</p>
+            </div>
+        {% endfor %}
+        {% endif %}
+        </div>
+  </div>
+
+</body>
+</html> 
